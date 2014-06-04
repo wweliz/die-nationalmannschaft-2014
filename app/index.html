@@ -2,7 +2,7 @@
 <html class="no-js">
   <head>
     <meta charset="utf-8">
-    <title>June4</title>
+    <title>Die Nationalmannschaft 2014</title>
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width">
     <link rel="shortcut icon" href="/favicon.ico">
@@ -17,10 +17,19 @@
     <!-- endbuild -->
   </head>
   <body>
-
-    <div class="hero-unit"></div>
+  	<div class="main-container">
+    	<h1>Die Nationalmannschaft 2014</h1>
+    	<input class="img-input" placeholder="image url"></input>
+    	<span class="new-img button">Add Image</span>
+    </div>
 
     <!-- Scripts -->
+    <script type="text/template" class="players">
+    	<img class="big-img" src="<%= url %>" alt="<%= name %>" />
+			<span class="save-btn button">Save</span>
+			<span class="name"> <%= name %> </span>
+			<span class="url"> <%= url %> </span>  
+    </script>
 
     <!-- build:js scripts/vendor.js -->
     <!-- bower:js -->

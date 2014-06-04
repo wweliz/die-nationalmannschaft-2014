@@ -1,28 +1,46 @@
-"use strict";
+'use strict';
 
-var aModel = Backbone.Model.extend({
+var ImgModel = Backbone.Model.extend({
 	idAttribute: '_id',
 });
 
-var aCollection = Backbone.Collection.extend({
-	model: Mod,
-	url: 'http://tiny-pizza-server.herokuapp.com/collections/whitneytodoapp',
+var ImgCollection = Backbone.Collection.extend({
+	model: ImgModel,
+	url: 'http://tiny-pizza-server.herokuapp.com/collections/die-nationalmannschaft',
 });
 
-var aView = Backbone.View.extend({
-  aTemplate: _.template($('.script-class-name').text()),
+var ImgView = Backbone.View.extend({
+  viewTemplate: _.template($('.players').text()),
 
   events: {
     //
   },
 
-	initialize: function(){
-		//
+  initialize: function(){
+    $('.main-container').prepend(this.el);
+    this.render();
   },
 
 	render: function(){
-		//
-  },
-
-  //other functions
+		var renderedTemplate = this.viewTemplate(this.model.attributes);
+    this.$el.html(renderedTemplate);
+  }
 });
+
+
+var AppView = Backbone.View.extend({
+	initialize: function(){
+
+		this.listenTo(anImgCollection, 'add', function(image){
+			new ImgView({model: image})
+		});
+
+	}
+})
+
+var anImgCollection = new ImgCollection();
+
+var cool = new AppView();
+
+//fetches anImgCollection instance from the server; when done...
+anImgCollection.fetch()
