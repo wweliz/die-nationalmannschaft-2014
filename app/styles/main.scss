@@ -1,40 +1,33 @@
+// Universal Styling
 body {
-  font-family: Arial, Sans-Serif;
-  font-size: 12px;
-  font-weight: bold;
-  color: #666666;
-  vertical-align: top;
-  margin: 0;
+	font-family: Arial, Sans-Serif;
+	font-size: 12px;
+	color: #666666;
+	vertical-align: top;
+	margin: 0;
 }
 
 .main-container {
-  width: 960px;
-  padding: 20px;
-  margin: 0 auto;
-  border: 1px solid #dcdcdc;
+	width: 912px;
+	padding: 20px;
+	margin: 0 auto;
+	border: 1px solid #dcdcdc;
 }
 
-.name {
-	display: inline-block;
-	width: 300px;
-
-	&.done {
-		color: red;
-	}
-}
+.header {font-size: 36px;}
 
 input {
 	background-color: #f9f9f9;
 	height: 16px;
-	width: 300px;
-  padding: 4px;
+	width: 375px;
+	padding: 4px;
 	border: 1px solid #dcdcdc;
 
 	&.changed {background: #ffcccc;}
 }
 
 .button {
-	box-shadow: inset 0px 1px 0px 0px #ffffff;
+	box-shadow: inset 0px 0px 1px 0px #ffffff;
 	background-color: #f9f9f9;
 	border-radius: 6px;
 	border: 1px solid #dcdcdc;
@@ -55,17 +48,42 @@ input {
 	}
 }
 
-// .image-detail {
-// 	& img {
-// 		width: 93px;
-// 		height: 225px;
-// 	}
-// }
+// Detail View Styling
+.detail-view {
+	min-height: 20px;
+	border: 1px solid #dcdcdc;
+	padding: 10px;
+	margin: 10px;
 
-.big-img {
 	& img {
-		width: 186px;
 		height: 450px;
+		display: block;
+		margin: 0 auto 10px auto;
+	}
+
+	.player-name-input, .img-input {
+		margin-right: 10px;
 	}
 }
 
+// Gallery View Styling
+.each-player-gallery {
+	border: 1px solid #dcdcdc;
+	height: 473px;
+	width: 186px;
+	padding: 10px;
+	margin: 10px;
+	display: inline-block;
+	vertical-align: top;
+
+	& .name {
+		max-width: 186px;
+		font-size: 17px;
+		text-align: center;
+	}
+
+	& img {
+		max-height: 450px;
+		max-width: 186px;
+	}
+}
